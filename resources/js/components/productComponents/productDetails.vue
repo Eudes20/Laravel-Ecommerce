@@ -26,7 +26,7 @@
                         <li><i class="fa fa-star"></i></li>
                         <li><i class="fa fa-star"></i></li>
                     </ul>
-                    <a href="#">(3 customer reviews)</a><br />
+                    <a href="#">(3 clients ont notés)</a><br />
                     <div class="d-flex justify-content-between" style="width:120px;">
                         <span v-if="product.discount_price > 0">
                             <del>$ {{product.price}}</del>
@@ -43,13 +43,13 @@
                     <form action="#" class="row">
                         <div class="col-md-4">
                             <div class="form-group d-flex justify-content-between">
-                                <label for="" style="margin-right: 10px; font-weight:bold;">QTY: </label>
+                                <label for="" style="margin-right: 10px; font-weight:bold;">QTÉ: </label>
                                 <input class="form-control" min="1" v-model="qty" :max="product.stock - product.minimum_amount" name="quantity" value="1" type="number" >
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group d-flex">
-                                <label for="" style="margin-right: 10px; font-weight:bold;">Color: </label>
+                                <label for="" style="margin-right: 10px; font-weight:bold;">Couleur: </label>
                                 <select name="" v-model="color" class="form-control" id="">
                                     <option v-for="(color) in product.color" :key="color.id" :value="color.id" > {{color.name}}</option>
                                 </select>
@@ -57,14 +57,14 @@
                         </div>
                         <div class="col-md-4">
                             <div class="form-group d-flex">
-                                <label for="" style="margin-right: 10px; font-weight:bold;">Size: </label>
+                                <label for="" style="margin-right: 10px; font-weight:bold;">Taille: </label>
                                 <select name="" v-model="size" class="form-control" id="">
                                      <option v-for="(size) in product.size" :key="size.id" :value="size.id" > {{size.name}}</option>
                                 </select>
                             </div>
                         </div>
                         <div class="col-12">
-                            <button @click.prevent="add_to_cart(product)" type="button">Add to cart</button>
+                            <button @click.prevent="add_to_cart(product)" type="button">Acheter</button>
                         </div>
                     </form>
                 </div>
@@ -91,7 +91,7 @@
                         <a href="#">fashion, style, men, child</a>
                     </div>
                     <div class="footer-content pt-15 text-uppercase">
-                        <p>Share this product</p>
+                        <p>Partager ce produit</p>
                         <ul>
                             <li>
                                 <a href="#" data-toggle="tooltip" title="" data-original-title="Facebook"><i class="fa fa-facebook"></i></a>

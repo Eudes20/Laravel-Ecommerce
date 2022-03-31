@@ -2,8 +2,8 @@
 <div class="product-wrapper">
     <div class="product-img">
         <a href="#">
-            <img src="http://127.0.0.1:8000/contents/website/img/product/5.jpg" alt="" class="primary">
-            <img src="http://127.0.0.1:8000/contents/website/img/product/6.jpg" alt="" class="secondary">
+            <img src="{{asset('contents/website/img/protfolio/5.jpg')}}" alt="" class="primary">
+            <img src="{{asset('contents/website/img/protfolio/6.jpg')}}" alt="" class="secondary">
         </a>
         <div class="product-icon c-fff home3-hover-bg">
             <ul>

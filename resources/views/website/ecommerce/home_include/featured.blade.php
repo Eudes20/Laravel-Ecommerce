@@ -1,7 +1,7 @@
 <div class="featured-area box-shadow bg-fff">
     <div class="product-title home3-bg text-uppercase">
         <i class="fa fa-star-o icon home3-bg2"></i>
-        <h3>featured</h3>
+        <h3>En vedette</h3>
     </div>
     <div class="feautred-active home2 left-right-angle">
         <div class="featured-wrapper">

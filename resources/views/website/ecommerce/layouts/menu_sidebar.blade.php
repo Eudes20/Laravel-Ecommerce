@@ -1,6 +1,6 @@
 <div class="categories-menu text-uppercase home3-bg2 home3-categories-menu click" >
     <i class="fa fa-list-ul"></i>
-    <span>All Categories</span>
+    <span>Categories</span>
 </div>
 <div class="menu-container home3-menu-container home3-hover toggole" style="{{ $_SERVER['REQUEST_URI'] != '/'?'display: none':'' }}">
     <ul>
@@ -53,13 +53,13 @@
         <li class="show_more_li">
             <a href="#" class="show_more_menu_btn">
                 <i class="fa fa-plus"></i>
-                Show More
+                Afficher Plus
             </a>
         </li>
         <li class="show_less_li" style="display: none;">
             <a href="#" class="show_less_menu_btn">
                 <i class="fa fa-minus"></i>
-                Show Less
+                Afficher Moins
             </a>
         </li>
     </ul>

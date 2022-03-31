@@ -12,10 +12,10 @@
                     </a>
                     <div class="product-icon c-fff home3-hover-bg">
                         <ul>
-                            <li><a href="#" data-toggle="tooltip" title="" data-original-title="Add to cart"><i class="fa fa-shopping-cart"></i></a></li>
+                            <li><a href="#" data-toggle="tooltip" title="" data-original-title="Acheter"><i class="fa fa-shopping-cart"></i></a></li>
                             <li><a href="#" data-toggle="tooltip" title="" data-original-title="Wishlist"><i class="fa fa-heart-o"></i></a></li>
                             <li><a href="#" data-toggle="tooltip" title="" data-original-title="Compare"><i class="fa fa-comments"></i></a></li>
-                            <li><a href="#" data-toggle="tooltip" @click.prevent="showModal(product)"  title="" data-original-title="view product details"><i class="fa fa-search"></i></a></li>
+                            <li><a href="#" data-toggle="tooltip" @click.prevent="showModal(product)"  title="" data-original-title="voir les détails"><i class="fa fa-search"></i></a></li>
                         </ul>
                     </div>
                 </div>

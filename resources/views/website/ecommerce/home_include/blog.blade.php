@@ -1,7 +1,7 @@
 <div class="blog-area box-shadow bg-fff">
     <div class="product-title home3-bg text-uppercase">
         <i class="fa fa-comments-o icon home3-bg2"></i>
-        <h3>LATEST BLOG</h3>
+        <h3>RÉCENT BLOG</h3>
     </div>
     <div class="feautred-active right home2 left-right-angle">
         <div class="blog-wrapper">

@@ -3,7 +3,7 @@
         <div class="col-sm-12">
             <div class="product-title home3-bg text-uppercase">
                 <i class="fa fa-history icon home3-bg2"></i>
-                <h3>latest deals</h3>
+                <h3>DERNIÈRES OFFRES</h3>
             </div>
         </div>
     </div>
@@ -30,7 +30,7 @@
                         </li>
                     </ul>
                 </div>
-                <span class="sale">Sale</span>
+                <span class="sale">Vendre</span>
                 <div class="deal-count">
                     <div class="timer">
                         <div data-countdown="2017/06/01"></div>
@@ -71,7 +71,7 @@
                         </li>
                     </ul>
                 </div>
-                <span class="sale">Sale</span>
+                <span class="sale">Vendre</span>
                 <div class="deal-count">
                     <div class="timer">
                         <div data-countdown="2016/06/01"></div>
@@ -112,7 +112,7 @@
                         </li>
                     </ul>
                 </div>
-                <span class="sale">Sale</span>
+                <span class="sale">Vendre</span>
                 <div class="deal-count">
                     <div class="timer">
                         <div data-countdown="2017/06/01"></div>
@@ -153,7 +153,7 @@
                         </li>
                     </ul>
                 </div>
-                <span class="sale">Sale</span>
+                <span class="sale">Vendre</span>
                 <div class="deal-count">
                     <div class="timer">
                         <div data-countdown="2017/06/01"></div>

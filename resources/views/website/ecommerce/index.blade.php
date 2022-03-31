@@ -18,7 +18,7 @@
                             @include('website.ecommerce.home_include.testimonial')
                             <!-- testimonils-area end -->
                             <!-- blog-area start -->
-                            @include('website.ecommerce.home_include.blog')
+                            {{-- @include('website.ecommerce.home_include.blog') --}}
                             <!-- blog-area end -->
                             <!-- newsletter-area start -->
                             @include('website.ecommerce.home_include.newsletter')
@@ -32,12 +32,12 @@
                             <div class="tab-area box-shadow bg-fff">
                                 <div class="product-title home3-bg text-uppercase">
                                     <i class="fa fa-check-square-o icon home3-bg2"></i>
-                                    <h3>Recent Product</h3>
+                                    <h3>Produits Récents</h3>
                                     <div class="tab-menu home3-tab-menu floatright hidden-xs">
                                         <ul class="nav">
-                                            <li><a href="#" class="active">Electronics</a></li>
+                                            <li><a href="#" class="active">Electroniques</a></li>
                                             <li><a href="#" >Smartphone</a></li>
-                                            <li><a href="#" >Tablets</a></li>
+                                            <li><a href="#" >Tablettes</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -74,12 +74,12 @@
                             <div class="tab-area box-shadow bg-fff">
                                 <div class="product-title home3-bg text-uppercase">
                                     <i class="fa fa-check-square-o icon home3-bg2"></i>
-                                    <h3>Products category</h3>
+                                    <h3>Catégorie de produits</h3>
                                     <div class="tab-menu home3-tab-menu floatright hidden-xs">
                                         <ul class="nav">
-                                            <li><a href="#" class="active" >Electronics</a></li>
+                                            <li><a href="#" class="active" >Electroniques</a></li>
                                             <li><a href="#" >Smartphone</a></li>
-                                            <li><a href="#" >Tablets</a></li>
+                                            <li><a href="#" >Tablettes</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -120,7 +120,7 @@
                             <div class="mostviewed-area mt-35 box-shadow bg-fff">
                                 <div class="product-title home3-bg text-uppercase">
                                     <i class="fa fa-check-square-o icon home3-bg2"></i>
-                                    <h3>Products category</h3>
+                                    <h3>Catégorie de produits</h3>
                                 </div>
                                 <div class="row">
                                     @for ($i = 0; $i < 12; $i++)
@@ -138,14 +138,14 @@
                             <div class="modal-dialog modal-xl">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="productViewModalLabel">Details</h5>
+                                        <h5 class="modal-title" id="productViewModalLabel">Détails</h5>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
                                         <product-details></product-details>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
                                         {{-- <button type="button" class="btn btn-primary">Save changes</button> --}}
                                     </div>
                                 </div>
