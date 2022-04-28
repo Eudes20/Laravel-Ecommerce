@@ -1,7 +1,7 @@
-(function ($) {
+(function($) {
     "use strict";
     // click //
-    $(".click").on('click', function () {
+    $(".click").on('click', function() {
         $(".toggole").slideToggle(500);
     });
     /*--------------------------
@@ -125,89 +125,89 @@
     // })
     // feautred-active ///
     $('.feautred-active').owlCarousel({
-        smartSpeed: 1000,
-        margin: 1,
-        nav: true,
-        navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
-        responsive: {
-            0: {
-                items: 1
-            },
-            576: {
-                items: 2
-            },
-            768: {
-                items: 3
-            },
-            992: {
-                items: 1
-            },
-            1000: {
-                items: 1
+            smartSpeed: 1000,
+            margin: 1,
+            nav: true,
+            navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
+            responsive: {
+                0: {
+                    items: 1
+                },
+                576: {
+                    items: 2
+                },
+                768: {
+                    items: 3
+                },
+                992: {
+                    items: 1
+                },
+                1000: {
+                    items: 1
+                }
             }
-        }
-    })
-    // testmonial-active ///
+        })
+        // testmonial-active ///
     $('.testmonial-active').owlCarousel({
-        smartSpeed: 1000,
-        margin: 1,
-        nav: true,
-        navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
-        responsive: {
-            0: {
-                items: 1
-            },
-            600: {
-                items: 2
-            },
-            992: {
-                items: 1
-            },
-            1000: {
-                items: 1
+            smartSpeed: 1000,
+            margin: 1,
+            nav: true,
+            navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 2
+                },
+                992: {
+                    items: 1
+                },
+                1000: {
+                    items: 1
+                }
             }
-        }
-    })
-    // mostviewed-active///
+        })
+        // mostviewed-active///
     $('.mostviewed-active').owlCarousel({
-        smartSpeed: 1000,
-        margin: 15,
-        nav: true,
-        navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
-        responsive: {
-            0: {
-                items: 1
-            },
-            576: {
-                items: 2
-            },
-            768: {
-                items: 2
-            },
-            1000: {
-                items: 2
+            smartSpeed: 1000,
+            margin: 15,
+            nav: true,
+            navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
+            responsive: {
+                0: {
+                    items: 1
+                },
+                576: {
+                    items: 2
+                },
+                768: {
+                    items: 2
+                },
+                1000: {
+                    items: 2
+                }
             }
-        }
-    })
-    // brand-active///
+        })
+        // brand-active///
     $('.brand-active').owlCarousel({
-        smartSpeed: 1000,
-        margin: 15,
-        nav: false,
-        navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
-        responsive: {
-            0: {
-                items: 2
-            },
-            600: {
-                items: 4
-            },
-            1000: {
-                items: 6
+            smartSpeed: 1000,
+            margin: 15,
+            nav: false,
+            navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
+            responsive: {
+                0: {
+                    items: 2
+                },
+                600: {
+                    items: 4
+                },
+                1000: {
+                    items: 6
+                }
             }
-        }
-    })
-    // single-protfolio-active///
+        })
+        // single-protfolio-active///
     $('.single-protfolio-active').owlCarousel({
         smartSpeed: 1000,
         margin: 0,
@@ -234,7 +234,7 @@
     ---------------------------- */
     var ProductDetailsSmall = $('.single-protfolio-active .single-img a , .single-product-active .single-img a');
 
-    ProductDetailsSmall.on('click', function (e) {
+    ProductDetailsSmall.on('click', function(e) {
         e.preventDefault();
 
         var $href = $(this).attr('href');
@@ -249,33 +249,33 @@
 
     // single-product-active///
     $('.single-product-active').owlCarousel({
-        smartSpeed: 1000,
-        margin: 0,
-        nav: false,
-        navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
-        responsive: {
-            0: {
-                items: 2
-            },
-            450: {
-                items: 2
-            },
-            600: {
-                items: 3
-            },
-            1000: {
-                items: 3
+            smartSpeed: 1000,
+            margin: 0,
+            nav: false,
+            navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
+            responsive: {
+                0: {
+                    items: 2
+                },
+                450: {
+                    items: 2
+                },
+                600: {
+                    items: 3
+                },
+                1000: {
+                    items: 3
+                }
             }
-        }
-    })
-    /*---------------------
+        })
+        /*---------------------
  countdown
 --------------------- */
-    $('[data-countdown]').each(function () {
+    $('[data-countdown]').each(function() {
         var $this = $(this),
             finalDate = $(this).data('countdown');
-        $this.countdown(finalDate, function (event) {
-            $this.html(event.strftime('<span class="cdown days"><span class="time-count">%-D</span> <p>Days</p></span> <span class="cdown hour"><span class="time-count">%-H</span> <p>Hour</p></span> <span class="cdown minutes"><span class="time-count">%M</span> <p>Min</p></span> <span class="cdown second"> <span><span class="time-count">%S</span> <p>Sec</p></span>'));
+        $this.countdown(finalDate, function(event) {
+            $this.html(event.strftime('<span class="cdown days"><span class="time-count">%-D</span> <p>Jours</p></span> <span class="cdown hour"><span class="time-count">%-H</span> <p>Heure</p></span> <span class="cdown minutes"><span class="time-count">%M</span> <p>Min</p></span> <span class="cdown second"> <span><span class="time-count">%S</span> <p>Sec</p></span>'));
         });
     });
 
@@ -284,25 +284,25 @@
     ------------------------------*/
     // home2-blog-active///
     $('.home2-blog-active').owlCarousel({
-        smartSpeed: 1000,
-        margin: 0,
-        nav: true,
-        autoplayTimeout: 1000,
-        autoplay: true,
-        navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
-        responsive: {
-            0: {
-                items: 1
-            },
-            600: {
-                items: 2
-            },
-            1000: {
-                items: 2
+            smartSpeed: 1000,
+            margin: 0,
+            nav: true,
+            autoplayTimeout: 1000,
+            autoplay: true,
+            navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 2
+                },
+                1000: {
+                    items: 2
+                }
             }
-        }
-    })
-    // blog-active///
+        })
+        // blog-active///
     $('.blog-active').owlCarousel({
         smartSpeed: 1000,
         margin: 0,
@@ -326,47 +326,47 @@
 
     // mostviewed-active-2///
     $('.mostviewed-active-2').owlCarousel({
-        smartSpeed: 1000,
-        margin: 15,
-        nav: true,
-        navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
-        responsive: {
-            0: {
-                items: 1
-            },
-            576: {
-                items: 2
-            },
-            768: {
-                items: 2
-            },
-            1000: {
-                items: 3
+            smartSpeed: 1000,
+            margin: 15,
+            nav: true,
+            navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
+            responsive: {
+                0: {
+                    items: 1
+                },
+                576: {
+                    items: 2
+                },
+                768: {
+                    items: 2
+                },
+                1000: {
+                    items: 3
+                }
             }
-        }
-    })
-    // mostviewed-active-2///
+        })
+        // mostviewed-active-2///
     $('.mostviewed-active-2').owlCarousel({
-        smartSpeed: 1000,
-        margin: 15,
-        nav: true,
-        navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
-        responsive: {
-            0: {
-                items: 1
-            },
-            576: {
-                items: 2
-            },
-            768: {
-                items: 2
-            },
-            1000: {
-                items: 3
+            smartSpeed: 1000,
+            margin: 15,
+            nav: true,
+            navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
+            responsive: {
+                0: {
+                    items: 1
+                },
+                576: {
+                    items: 2
+                },
+                768: {
+                    items: 2
+                },
+                1000: {
+                    items: 3
+                }
             }
-        }
-    })
-    // cart-active///
+        })
+        // cart-active///
     $('.cart-active').owlCarousel({
         smartSpeed: 1000,
         margin: 15,
@@ -387,15 +387,15 @@
 
 
     // login form click////
-    $(".login-form-click").on('click', function () {
+    $(".login-form-click").on('click', function() {
         $(".login-form").slideToggle(500);
     });
     // /// show-code///
-    $(".code").on('click', function () {
+    $(".code").on('click', function() {
         $(".code-form").slideToggle(500);
     });
     // /// Account password///
-    $(".show-password").on('click', function () {
+    $(".show-password").on('click', function() {
         $(".account-password").slideToggle(500);
     });
 
@@ -416,20 +416,20 @@
     // mintiup////
     $('#Container').mixItUp();
 
-    $(window).on('load',function(){
+    $(window).on('load', function() {
         let menu_lists = $('.home3-menu-container .menu_item_li');
         // console.log(menu_lists);
 
         for (let index = 0; index < menu_lists.length; index++) {
             const element = menu_lists[index];
 
-            if(index > 10){
-                $(element).css('display','none');
+            if (index > 10) {
+                $(element).css('display', 'none');
             }
         }
     })
 
-    $('.show_more_menu_btn').on('click',function(e){
+    $('.show_more_menu_btn').on('click', function(e) {
         e.preventDefault();
         let menu_lists = $('.home3-menu-container .menu_item_li');
         // console.log(menu_lists);
@@ -437,17 +437,17 @@
         for (let index = 0; index < menu_lists.length; index++) {
             const element = menu_lists[index];
 
-            if(index > 10){
-                $(element).css('display','block');
+            if (index > 10) {
+                $(element).css('display', 'block');
             }
         }
 
-        $('.show_less_li').css('display','block');
-        $('.show_more_menu_btn').css('display','none');
+        $('.show_less_li').css('display', 'block');
+        $('.show_more_menu_btn').css('display', 'none');
 
     })
 
-    $('.show_less_menu_btn').on('click',function(e){
+    $('.show_less_menu_btn').on('click', function(e) {
         e.preventDefault();
         let menu_lists = $('.home3-menu-container .menu_item_li');
         // console.log(menu_lists);
@@ -455,17 +455,17 @@
         for (let index = 0; index < menu_lists.length; index++) {
             const element = menu_lists[index];
 
-            if(index > 10){
-                $(element).css('display','none');
+            if (index > 10) {
+                $(element).css('display', 'none');
             }
         }
 
-        $('.show_less_li').css('display','none');
-        $('.show_more_menu_btn').css('display','block');
+        $('.show_less_li').css('display', 'none');
+        $('.show_more_menu_btn').css('display', 'block');
 
     });
 
-    $('.home_cat_nav li a').on('click',function(e){
+    $('.home_cat_nav li a').on('click', function(e) {
         e.preventDefault();
 
         $('.home_cat_nav li a').removeClass('active');

@@ -62,7 +62,7 @@
             <div id="sidebar-wrapper" data-simplebar="" data-simplebar-auto-hide="true">
                 <div class="brand-logo">
                     <img src="{{ asset('contents/admin') }}/images/logo-icon.png" class="logo-icon" alt="logo icon" />
-                    <h5 class="logo-text">Ecommerce</h5>
+                    <h5 class="logo-text">BONPLAN LTD.</h5>
                     <div class="close-btn"><i class="zmdi zmdi-close"></i></div>
                 </div>
 
@@ -288,6 +288,7 @@
                         <li id="theme13"></li>
                         <li id="theme14"></li>
                         <li id="theme15"></li>
+                        <li id="theme16"></li>
                     </ul>
                 </div>
             </div>

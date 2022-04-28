@@ -6,7 +6,7 @@
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}" />
 
-        <title>Ecommerce</title>
+        <title>BONPLAN LTD.</title>
         <meta name="description" content="" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -63,6 +63,7 @@
         {{-- @include('include.flash') --}}
         <div class="main-wrapper box-shadow">
             <header class="clearfix">
+                {{-- first header start --}}
                 <div class="header-top-area bb hidden-xs">
                     <div class="container">
                         <div class="row">
@@ -75,6 +76,8 @@
                         </div>
                     </div>
                 </div>
+                {{-- first header end --}}
+                
                 <div class="header-middle-area ptb-25">
                     <div class="container">
                         <div class="row">
@@ -103,7 +106,7 @@
                             </div>
 
                             <div class="col-xl-2 col-lg-2 col-md-4 col-12">
-                                @include('website.ecommerce.layouts.header_cart')
+                                {{-- @include('website.ecommerce.layouts.header_cart') --}}
                             </div>
                         </div>
                     </div>
@@ -133,8 +136,8 @@
                                     <span class="fa fa-plane"></span>
                                 </div>
                                 <div class="order-content">
-                                    <h5>World-Wide Shipping</h5>
-                                    <span>On order over $100</span>
+                                    <h5>Livraison</h5>
+                                    <span>Sur commande supérieure à 1 000 000 XOF</span>
                                 </div>
                             </div>
                         </div>
@@ -145,7 +148,7 @@
                                 </div>
                                 <div class="order-content">
                                     <h5>30 Days Return</h5>
-                                    <span>Moneyback guarantee</span>
+                                    <span>Garantie de remboursement</span>
                                 </div>
                             </div>
                         </div>
@@ -156,7 +159,7 @@
                                 </div>
                                 <div class="order-content">
                                     <h5>SUPPORT 24/7</h5>
-                                    <span>Call us: ( +123 ) 456 789</span>
+                                    <span>Appelez-nous: ( +123 ) 456 789</span>
                                 </div>
                             </div>
                         </div>
@@ -166,8 +169,8 @@
                                     <span class="fa fa-user"></span>
                                 </div>
                                 <div class="order-content">
-                                    <h5>MEMBER DISCOUNT</h5>
-                                    <span>10% on order over $200</span>
+                                    <h5>REMISE MEMBRE</h5>
+                                    <span>10% sur commande supérieure à 200 000 XOF</span>
                                 </div>
                             </div>
                         </div>
@@ -183,10 +186,10 @@
                             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12">
                                 <div class="footer-widget">
                                     <div class="footer-logo mb-25">
-                                        <img src="{{ asset('contents/website') }}/img/logo/1.png" alt="" />
+                                        <img src="{{ asset('contents/website') }}/img/logo/2.png" alt="" />
                                     </div>
                                     <div class="footer-content">
-                                        <p>OneClick is a premium Wordpress theme with advanced admin module. It's extremely customizable, easy to use and</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati sint corporis officiis? Dolores aperiam cumque veritatis natus ad corrupti harum?</p>
                                         <ul>
                                             <li>
                                                 <a href="#" data-toggle="tooltip" title="Facebook"><i class="fa fa-facebook"></i></a>
@@ -198,18 +201,18 @@
                                                 <a href="#" data-toggle="tooltip" title="Instagram"><i class="fa fa-instagram"></i></a>
                                             </li>
                                             <li>
-                                                <a href="#" data-toggle="tooltip" title="Google-Plus"><i class="fa fa-google-plus"></i></a>
+                                                <a href="#" data-toggle="tooltip" title="Google-Business"><i class="fa fa-google"></i></a>
                                             </li>
-                                            <li>
+                                            {{-- <li>
                                                 <a href="#" data-toggle="tooltip" title="Linkedin"><i class="fa fa-linkedin"></i></a>
-                                            </li>
+                                            </li> --}}
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12">
                                 <div class="footer-widget">
-                                    <h3 class="footer-title bb mb-20 pb-15">About Us</h3>
+                                    <h3 class="footer-title bb mb-20 pb-15">À propos de nous</h3>
                                     <ul>
                                         <li>
                                             <div class="contuct-content">
@@ -217,7 +220,7 @@
                                                     <i class="fa fa-map-marker"></i>
                                                 </div>
                                                 <div class="contuct-info">
-                                                    <span>75, Avenue Anatole France, Paris</span>
+                                                    <span>75,Agla, Cotonou</span>
                                                 </div>
                                             </div>
                                         </li>
@@ -237,7 +240,7 @@
                                                     <i class="fa fa-envelope"></i>
                                                 </div>
                                                 <div class="contuct-info">
-                                                    <span>hasib.me1995@gmail.com</span>
+                                                    <span>support.bonplan@ltd.com</span>
                                                 </div>
                                             </div>
                                         </li>
@@ -249,22 +252,22 @@
                                     <h3 class="footer-title bb mb-20 pb-15">Information</h3>
                                     <div class="footer-menu home3-hover">
                                         <ul>
-                                            <li><a href="blog.html">Our Blog</a></li>
-                                            <li><a href="shop.html">About Our Shop</a></li>
-                                            <li><a href="#">Secure Shopping</a></li>
-                                            <li><a href="#">Privacy Policy</a></li>
+                                            <li><a href="blog.html">Notre Blog</a></li>
+                                            <li><a href="shop.html">À propos de notre boutique</a></li>
+                                            <li><a href="#">Achats sécurisés</a></li>
+                                            <li><a href="#">Politique de confidentialité</a></li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-xl-2 col-lg-2 col-md-2 col-sm-4 col-12">
                                 <div class="footer-widget">
-                                    <h3 class="footer-title bb mb-20 pb-15">My account</h3>
+                                    <h3 class="footer-title bb mb-20 pb-15">Mon compte</h3>
                                     <div class="footer-menu home3-hover">
                                         <ul>
-                                            <li><a href="account.html">My Account</a></li>
-                                            <li><a href="checkout.html">Checkout</a></li>
-                                            <li><a href="cart.html">Shopping Cart</a></li>
+                                            <li><a href="account.html">Mon compte</a></li>
+                                            <li><a href="checkout.html">Paiement</a></li>
+                                            <li><a href="cart.html">Panier</a></li>
                                             <li><a href="wishlist.html">Wishlist</a></li>
                                         </ul>
                                     </div>
@@ -272,13 +275,13 @@
                             </div>
                             <div class="col-xl-2 col-lg-2 col-md-2 col-sm-4 col-12">
                                 <div class="footer-widget">
-                                    <h3 class="footer-title bb mb-20 pb-15">Our services</h3>
+                                    <h3 class="footer-title bb mb-20 pb-15">Nos services</h3>
                                     <div class="footer-menu">
                                         <ul>
-                                            <li><a href="#">Shipping & Returns</a></li>
-                                            <li><a href="#">Secure Shopping</a></li>
-                                            <li><a href="#">International Shipping</a></li>
-                                            <li><a href="#">Affiliates</a></li>
+                                            <li><a href="#">Expédition & retours</a></li>
+                                            <li><a href="#">Achats sécurisés</a></li>
+                                            <li><a href="#">Livraison international</a></li>
+                                            <li><a href="#">Collaboration</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -291,8 +294,8 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="copyright" style="display: flex; justify-content: space-between;">
-                                    <span style="display: inline-block">Copyright &copy; 2021 <a href="/">Brandzone</a> All Rights Reserved.</span>
-                                    <span  style="display: inline-block">Developed by <a style="color: red;" href="http://www.hsblco.com">HSBLCO</a></span>
+                                    <span style="display: inline-block">Copyright &copy; 2022 <a href="/">BONPLAN LTD</a> Tous Droits Reservés.</span>
+                                    <span  style="display: inline-block">Développé par <a style="color: red;" href="http://www.bonplantechmat.com">BONPLAN Techmat</a></span>
                                 </div>
                             </div>
                             {{-- <div class="col-xl-6 col-lg-6 col-md-6 col-12">
@@ -433,8 +436,6 @@
         {{-- @yield('vuejs') --}}
 
         @stack('custom_js')
-
-
 
     </body>
 

@@ -1,11 +1,12 @@
 <nav>
     <ul>
-        <li class="active2"><a href="/">Home</a></li>
-        <li><a href="{{ route('website_products') }}">product</a></li>
-        <li><a href="{{ route('website_product_details',rand(1,20)) }}">product details</a></li>
-        <li><a href="{{ route('website_cart') }}">cart</a></li>
-        <li><a href="{{ route('website_wishlist') }}">wishlist</a></li>
-        <li><a href="{{ route('website_checkout') }}">checkout</a></li>
-        <li><a class="menu-contact" href="{{ route('website_contact') }}">contact us</a></li>
+        <li class="@if(request()->is('/')) active2 @endif"><a href="/">Acceuil</a></li>
+        <li class="@if(request()->routeIs('website_products')) active2 @endif"><a href="{{ route('website_products') }}">Nos Produits</a></li>
+        {{-- <li><a href="{{ route('website_product_details',rand(1,20)) }}">détails Produit</a></li> --}}
+        <li><a href="#">Vidéothèque</a></li>
+        {{-- <li><a href="{{ route('website_wishlist') }}">wishlist</a></li>
+        <li><a href="{{ route('website_checkout') }}">Paiement</a></li> --}}
+        <li class="@if(request()->routeIs('website_location')) active2 @endif"><a href="{{ route('website_location') }}">Résidence</a></li>
+        <li class="@if(request()->routeIs('website_contact')) active2 @endif"><a class="menu-contact" href="{{ route('website_contact') }}">Contactez-nous</a></li>
     </ul>
 </nav>

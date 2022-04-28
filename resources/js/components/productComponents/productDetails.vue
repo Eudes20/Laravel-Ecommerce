@@ -26,7 +26,7 @@
                         <li><i class="fa fa-star"></i></li>
                         <li><i class="fa fa-star"></i></li>
                     </ul>
-                    <a href="#">(3 customer reviews)</a><br />
+                    <a href="#">(3 clients ont notés)</a><br />
                     <div class="d-flex justify-content-between" style="width:120px;">
                         <span v-if="product.discount_price > 0">
                             <del>$ {{product.price}}</del>
@@ -39,17 +39,17 @@
                 <div>
                    {{product.description}}
                 </div>
-                <div class="simple-product-form contuct-form mtb-20">
+                <!-- <div class="simple-product-form contuct-form mtb-20">
                     <form action="#" class="row">
                         <div class="col-md-4">
                             <div class="form-group d-flex justify-content-between">
-                                <label for="" style="margin-right: 10px; font-weight:bold;">QTY: </label>
+                                <label for="" style="margin-right: 10px; font-weight:bold;">QTÉ: </label>
                                 <input class="form-control" min="1" v-model="qty" :max="product.stock - product.minimum_amount" name="quantity" value="1" type="number" >
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group d-flex">
-                                <label for="" style="margin-right: 10px; font-weight:bold;">Color: </label>
+                                <label for="" style="margin-right: 10px; font-weight:bold;">Couleur: </label>
                                 <select name="" v-model="color" class="form-control" id="">
                                     <option v-for="(color) in product.color" :key="color.id" :value="color.id" > {{color.name}}</option>
                                 </select>
@@ -57,25 +57,25 @@
                         </div>
                         <div class="col-md-4">
                             <div class="form-group d-flex">
-                                <label for="" style="margin-right: 10px; font-weight:bold;">Size: </label>
+                                <label for="" style="margin-right: 10px; font-weight:bold;">Taille: </label>
                                 <select name="" v-model="size" class="form-control" id="">
                                      <option v-for="(size) in product.size" :key="size.id" :value="size.id" > {{size.name}}</option>
                                 </select>
                             </div>
                         </div>
                         <div class="col-12">
-                            <button @click.prevent="add_to_cart(product)" type="button">Add to cart</button>
+                            <button @click.prevent="add_to_cart(product)" type="button">Acheter</button>
                         </div>
                     </form>
-                </div>
+                </div> -->
                 <div class="simple-product-icon c-fff hover-bg pb-20 mb-10 bb">
                     <ul>
                         <li>
                             <a href="#" data-toggle="tooltip" title="" data-original-title="Browser Wishlist"><i class="fa fa-heart-o"></i></a>
                         </li>
-                        <li>
+                        <!-- <li>
                             <a href="#" data-toggle="tooltip" title="" data-original-title="Compare"><i class="fa fa-comments"></i></a>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
                 <div class="product_meta">
@@ -86,12 +86,12 @@
                         <b>Categories:</b>
                        <a href="#" v-for="(category) in product.category" :key="category.id"> {{ category.name }}, </a>
                     </div>
-                    <div class="single-blog-tag category bb pb-10">
+                    <!-- <div class="single-blog-tag category bb pb-10">
                         <b>Tags:</b>
                         <a href="#">fashion, style, men, child</a>
-                    </div>
+                    </div> -->
                     <div class="footer-content pt-15 text-uppercase">
-                        <p>Share this product</p>
+                        <p>Partager ce produit</p>
                         <ul>
                             <li>
                                 <a href="#" data-toggle="tooltip" title="" data-original-title="Facebook"><i class="fa fa-facebook"></i></a>

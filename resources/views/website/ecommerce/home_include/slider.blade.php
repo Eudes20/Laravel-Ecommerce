@@ -14,7 +14,7 @@
                                 <div class="slide1-text home3-slide1-text text-left">
                                     <div class="middle-text">
                                         <div class="cap-dec animated text-uppercase">
-                                            <h3>up to 20% off on TV</h3>
+                                            <h3>Jusqu'à 20% de réduction sur une TV</h3>
                                         </div>
                                         <div class="cap-title animated text-uppercase">
                                             <h1>
@@ -29,7 +29,7 @@
                                             </p>
                                         </div>
                                         <div class="cap-readmore animated">
-                                            <a href="#">View Collection</a>
+                                            <a href="#">Voir Collection</a>
                                         </div>
                                     </div>
                                 </div>
