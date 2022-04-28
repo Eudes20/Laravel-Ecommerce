@@ -39,7 +39,7 @@
                 <div>
                    {{product.description}}
                 </div>
-                <div class="simple-product-form contuct-form mtb-20">
+                <!-- <div class="simple-product-form contuct-form mtb-20">
                     <form action="#" class="row">
                         <div class="col-md-4">
                             <div class="form-group d-flex justify-content-between">
@@ -67,15 +67,15 @@
                             <button @click.prevent="add_to_cart(product)" type="button">Acheter</button>
                         </div>
                     </form>
-                </div>
+                </div> -->
                 <div class="simple-product-icon c-fff hover-bg pb-20 mb-10 bb">
                     <ul>
                         <li>
                             <a href="#" data-toggle="tooltip" title="" data-original-title="Browser Wishlist"><i class="fa fa-heart-o"></i></a>
                         </li>
-                        <li>
+                        <!-- <li>
                             <a href="#" data-toggle="tooltip" title="" data-original-title="Compare"><i class="fa fa-comments"></i></a>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
                 <div class="product_meta">
@@ -86,10 +86,10 @@
                         <b>Categories:</b>
                        <a href="#" v-for="(category) in product.category" :key="category.id"> {{ category.name }}, </a>
                     </div>
-                    <div class="single-blog-tag category bb pb-10">
+                    <!-- <div class="single-blog-tag category bb pb-10">
                         <b>Tags:</b>
                         <a href="#">fashion, style, men, child</a>
-                    </div>
+                    </div> -->
                     <div class="footer-content pt-15 text-uppercase">
                         <p>Partager ce produit</p>
                         <ul>

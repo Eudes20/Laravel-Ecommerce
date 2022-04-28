@@ -47,6 +47,7 @@ Route::get('/get_latest_checkout_information','CheckOutController@get_latest_che
 
 Route::get('/wishlist', 'WebsiteController@wishlist')->name('website_wishlist');
 Route::get('/contact', 'WebsiteController@contact')->name('website_contact');
+Route::get('/location', 'WebsiteController@location')->name('website_location');
 Route::get('/learn-vue', 'WebsiteController@vue')->name('website_vue');
 
 

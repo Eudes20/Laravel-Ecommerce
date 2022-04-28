@@ -4,9 +4,9 @@
         <h3>NEWSLETTER</h3>
     </div>
     <div class="newsletter form-style plbr-15">
-        <p>Soumettez votre courrier pour obtenir des événements</p>
+        <p>Restez informer de nos prochains évènements</p>
         <form action="#">
-            <input type="email" placeholder="votreemail@email.com" />
+            <input type="email" placeholder="Entrez votre email" />
             <button><i class="fa fa-paper-plane-o"></i></button>
         </form>
     </div>

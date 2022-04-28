@@ -458,6 +458,11 @@ class WebsiteController extends Controller
         return view('website.ecommerce.contact');
     }
 
+    public function location()
+    {
+        return view('website.ecommerce.location');
+    }
+
     public function vue()
     {
         return view('learn-vue');

@@ -1,0 +1,29 @@
+{
+  "sqltools.connections": [
+    {
+      "mysqlOptions": {
+        "authProtocol": "default"
+      },
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 3306,
+      "driver": "MySQL",
+      "name": "E-Com",
+      "group": "Local",
+      "database": "bonplan_db",
+      "username": "eudes",
+      "password": "dev"
+    },
+    {
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 5432,
+      "driver": "PostgreSQL",
+      "name": "API",
+      "group": "Local",
+      "database": "proprero_db",
+      "username": "developer",
+      "password": "dev"
+    }
+  ]
+}

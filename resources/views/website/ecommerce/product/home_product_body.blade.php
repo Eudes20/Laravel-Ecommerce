@@ -2,20 +2,15 @@
 <div class="product-wrapper">
     <div class="product-img">
         <a href="#">
-            <img src="{{asset('contents/website/img/protfolio/5.jpg')}}" alt="" class="primary">
-            <img src="{{asset('contents/website/img/protfolio/6.jpg')}}" alt="" class="secondary">
+            <img src="{{asset($product->thumb_image)}}" alt="" class="primary">
+            <img src="{{asset($product->image[0]->name)}}" alt="" class="secondary">
         </a>
         <div class="product-icon c-fff home3-hover-bg">
-            <ul>
-                <li><a href="#" data-toggle="tooltip" title="" data-original-title="Add to cart"><i class="fa fa-shopping-cart"></i></a></li>
-                <li><a href="#" data-toggle="tooltip" title="" data-original-title="Wishlist"><i class="fa fa-heart-o"></i></a></li>
-                <li><a href="#" data-toggle="tooltip" title="" data-original-title="Compare"><i class="fa fa-comments"></i></a></li>
-                <li><a href="#" data-toggle="tooltip" title="" data-original-title="Accumsan eli"><i class="fa fa-search"></i></a></li>
-            </ul>
+            @include('website.ecommerce.home_include.tooltip')
         </div>
     </div>
     <div class="product-content home3-hover">
-        <h3><a href="#">Adipiscing cursus eu</a></h3>
+        <h3><a href="{{route('website_product_details', $product->id)}}">{{$product->name}}</a></h3>
         <ul>
             <li><i class="fa fa-star"></i></li>
             <li><i class="fa fa-star"></i></li>
@@ -23,6 +18,6 @@
             <li><i class="fa fa-star"></i></li>
             <li><i class="fa fa-star"></i></li>
         </ul>
-        <span>&amp;300.00</span>
+        <span>&amp; {{$product->price}}</span>
     </div>
 </div>

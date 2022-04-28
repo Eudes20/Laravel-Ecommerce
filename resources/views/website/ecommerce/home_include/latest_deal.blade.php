@@ -15,25 +15,12 @@
                     <img src="{{ asset('contents/website') }}/img/product/2.jpg" alt="" class="secondary" />
                 </a>
                 <div class="product-icon home3-hover-bg">
-                    <ul>
-                        <li>
-                            <a href="#" data-toggle="tooltip" title="Add to cart"><i class="fa fa-shopping-cart"></i></a>
-                        </li>
-                        <li>
-                            <a href="#" data-toggle="tooltip" title="Wishlist"><i class="fa fa-heart-o"></i></a>
-                        </li>
-                        <li>
-                            <a href="#" data-toggle="tooltip" title="Compare"><i class="fa fa-comments"></i></a>
-                        </li>
-                        <li>
-                            <a href="#" data-toggle="tooltip" title="Accumsan eli"><i class="fa fa-search"></i></a>
-                        </li>
-                    </ul>
+                    @include('website.ecommerce.home_include.tooltip')
                 </div>
                 <span class="sale">Vendre</span>
                 <div class="deal-count">
                     <div class="timer">
-                        <div data-countdown="2017/06/01"></div>
+                        <div data-countdown="2022/04/06"></div>
                     </div>
                 </div>
             </div>
@@ -56,25 +43,12 @@
                     <img src="{{ asset('contents/website') }}/img/product/2.jpg" alt="" class="secondary" />
                 </a>
                 <div class="product-icon home3-hover-bg">
-                    <ul>
-                        <li>
-                            <a href="#" data-toggle="tooltip" title="Add to cart"><i class="fa fa-shopping-cart"></i></a>
-                        </li>
-                        <li>
-                            <a href="#" data-toggle="tooltip" title="Wishlist"><i class="fa fa-heart-o"></i></a>
-                        </li>
-                        <li>
-                            <a href="#" data-toggle="tooltip" title="Compare"><i class="fa fa-comments"></i></a>
-                        </li>
-                        <li>
-                            <a href="#" data-toggle="tooltip" title="Accumsan eli"><i class="fa fa-search"></i></a>
-                        </li>
-                    </ul>
+                    @include('website.ecommerce.home_include.tooltip')
                 </div>
                 <span class="sale">Vendre</span>
                 <div class="deal-count">
                     <div class="timer">
-                        <div data-countdown="2016/06/01"></div>
+                        <div data-countdown="2022/04/08"></div>
                     </div>
                 </div>
             </div>
@@ -97,25 +71,12 @@
                     <img src="{{ asset('contents/website') }}/img/product/3.jpg" alt="" class="secondary" />
                 </a>
                 <div class="product-icon home3-hover-bg">
-                    <ul>
-                        <li>
-                            <a href="#" data-toggle="tooltip" title="Add to cart"><i class="fa fa-shopping-cart"></i></a>
-                        </li>
-                        <li>
-                            <a href="#" data-toggle="tooltip" title="Wishlist"><i class="fa fa-heart-o"></i></a>
-                        </li>
-                        <li>
-                            <a href="#" data-toggle="tooltip" title="Compare"><i class="fa fa-comments"></i></a>
-                        </li>
-                        <li>
-                            <a href="#" data-toggle="tooltip" title="Accumsan eli"><i class="fa fa-search"></i></a>
-                        </li>
-                    </ul>
+                    @include('website.ecommerce.home_include.tooltip')
                 </div>
                 <span class="sale">Vendre</span>
                 <div class="deal-count">
                     <div class="timer">
-                        <div data-countdown="2017/06/01"></div>
+                        <div data-countdown="2022/04/07"></div>
                     </div>
                 </div>
             </div>
@@ -138,25 +99,12 @@
                     <img src="{{ asset('contents/website') }}/img/product/5.jpg" alt="" class="secondary" />
                 </a>
                 <div class="product-icon home3-hover-bg">
-                    <ul>
-                        <li>
-                            <a href="#" data-toggle="tooltip" title="Add to cart"><i class="fa fa-shopping-cart"></i></a>
-                        </li>
-                        <li>
-                            <a href="#" data-toggle="tooltip" title="Wishlist"><i class="fa fa-heart-o"></i></a>
-                        </li>
-                        <li>
-                            <a href="#" data-toggle="tooltip" title="Compare"><i class="fa fa-comments"></i></a>
-                        </li>
-                        <li>
-                            <a href="#" data-toggle="tooltip" title="Accumsan eli"><i class="fa fa-search"></i></a>
-                        </li>
-                    </ul>
+                    @include('website.ecommerce.home_include.tooltip')
                 </div>
                 <span class="sale">Vendre</span>
                 <div class="deal-count">
                     <div class="timer">
-                        <div data-countdown="2017/06/01"></div>
+                        <div data-countdown="2022/04/10"></div>
                     </div>
                 </div>
             </div>

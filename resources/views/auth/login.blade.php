@@ -6,17 +6,17 @@
         <div class="row">
             <div class="col-xl-12">
                 <div class="account-title mb-20 text-center">
-                    <h1>My Account</h1>
+                    <h1>Mon Compte</h1>
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="account-heading mb-25">
-                    <h2>Login</h2>
+                    <h2>Connexion</h2>
                 </div>
                 <div class="account-form form-style p-20 mb-30 bg-fff box-shadow">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
-                        <b>email address <span>*</span></b>
+                        <b>Adresse Email <span>*</span></b>
                         <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                         @error('email')
                             <span class="invalid-feedback" role="alert">
@@ -24,7 +24,7 @@
                             </span>
                         @enderror
 
-                        <b>Password <span>*</span></b>
+                        <b>Mot de Passe <span>*</span></b>
                         <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
                         @error('password')
@@ -34,7 +34,7 @@
                         @enderror
 
                         <div class="login-button">
-                            <button type="submit">Login</button>
+                            <button type="submit">Se Connecter</button>
                         </div>
 
                         {{-- <div class="form-group row">
@@ -52,7 +52,7 @@
 
                 </div>
             </div>
-            <div class="col-lg-6">
+            {{-- <div class="col-lg-6">
                 <div class="account-heading mb-25">
                     <h2>Register</h2>
                 </div>
@@ -67,7 +67,7 @@
                         <button>register</button>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
 </section>

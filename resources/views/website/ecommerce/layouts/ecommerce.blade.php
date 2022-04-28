@@ -106,7 +106,7 @@
                             </div>
 
                             <div class="col-xl-2 col-lg-2 col-md-4 col-12">
-                                @include('website.ecommerce.layouts.header_cart')
+                                {{-- @include('website.ecommerce.layouts.header_cart') --}}
                             </div>
                         </div>
                     </div>
@@ -436,8 +436,6 @@
         {{-- @yield('vuejs') --}}
 
         @stack('custom_js')
-
-
 
     </body>
 

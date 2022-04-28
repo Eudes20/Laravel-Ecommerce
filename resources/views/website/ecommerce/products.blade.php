@@ -7,8 +7,8 @@
                     <div class="woocommerce-breadcrumb mtb-15">
                         <div class="menu">
                             <ul>
-                                <li><a href="index.html">Home</a></li>
-                                <li class="active"><a href="shop.html">Shop</a></li>
+                                <li><a href="index.html">Acceuil</a></li>
+                                <li class="active"><a href="shop.html">Magazin</a></li>
                             </ul>
                         </div>
                     </div>
@@ -20,13 +20,13 @@
                     @include('website.ecommerce.product.poduct_page_categories')
 
                     <!-- filter-by-price-area start -->
-                    @include('website.ecommerce.product.product_price_range')
+                    {{-- @include('website.ecommerce.product.product_price_range') --}}
 
                     <!-- size-area start -->
-                    <div class="size-area bg-fff box-shadow">
+                    <div class="size-area mtb-30 bg-fff box-shadow">
                         <div class="product-title home2-bg-1 text-uppercase home2-product-title">
                             <i class="fa fa-bookmark icon bg-4"></i>
-                            <h3>Size</h3>
+                            <h3>Taille</h3>
                         </div>
                         <div class="size-menu shop-categories-menu p-20">
                             <ul>
@@ -41,7 +41,7 @@
                     <div class="color-area bg-fff box-shadow mtb-30">
                         <div class="product-title home2-bg-1 text-uppercase home2-product-title">
                             <i class="fa fa-bookmark icon bg-4"></i>
-                            <h3>Color</h3>
+                            <h3>Couleur</h3>
                         </div>
                         <div class="size-menu shop-categories-menu p-20">
                             <ul>
@@ -52,7 +52,7 @@
                         </div>
                     </div>
                     <!-- compare-area start -->
-                    <div class="compare-area bg-fff box-shadow">
+                    {{-- <div class="compare-area bg-fff box-shadow">
                         <div class="product-title home2-bg-1 text-uppercase home2-product-title">
                             <i class="fa fa-bookmark icon bg-4"></i>
                             <h3>Compare</h3>
@@ -62,12 +62,12 @@
                             <a href="#">Clear all</a>
                             <a href="#" data-toggle="tooltip" title="" class="pull-right compare text-uppercase" data-original-title="Compare">Compare </a>
                         </div>
-                    </div>
+                    </div> --}}
                     <!-- product-tags-area start -->
                     <div class="product-tags-area bg-fff box-shadow mtb-30">
                         <div class="product-title home2-bg-1 text-uppercase home2-product-title">
                             <i class="fa fa-bookmark icon bg-4"></i>
-                            <h3>Product Tags</h3>
+                            <h3>Étiquettes</h3>
                         </div>
                         <div class="tags tag-menu hover-bg p-20">
                             <ul>
@@ -93,7 +93,7 @@
                     <div class="featured-area bg-fff box-shadow mb-30">
                         <div class="product-title home2-bg-1 text-uppercase home2-product-title">
                             <i class="fa fa-bookmark icon bg-4"></i>
-                            <h3>featured</h3>
+                            <h3>Vedettes</h3>
                         </div>
                         <div class="featured-wrapper p-20">
                             <div class="product-wrapper single-featured bb">
@@ -159,10 +159,10 @@
                                         </a>
                                         <div class="product-icon c-fff home3-hover-bg">
                                             <ul>
-                                                <li><a href="#" data-toggle="tooltip" title="" data-original-title="Add to cart"><i class="fa fa-shopping-cart"></i></a></li>
+                                                {{-- <li><a href="#" data-toggle="tooltip" title="" data-original-title="Add to cart"><i class="fa fa-shopping-cart"></i></a></li> --}}
                                                 <li><a href="#" data-toggle="tooltip" title="" data-original-title="Wishlist"><i class="fa fa-heart-o"></i></a></li>
-                                                <li><a href="#" data-toggle="tooltip" title="" data-original-title="Compare"><i class="fa fa-comments"></i></a></li>
-                                                <li><a href="#" data-toggle="tooltip" @click.prevent="showModal(product)"  title="" data-original-title="view product details"><i class="fa fa-search"></i></a></li>
+                                                <li><a href="https://api.whatsapp.com/send?phone=22996162416" data-toggle="tooltip" title="" data-original-title="Acheter"><i class="fa fa-comments"></i></a></li>
+                                                <li><a href="#" data-toggle="tooltip" @click.prevent="showModal(product)"  title="" data-original-title="Détails"><i class="fa fa-search"></i></a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -202,14 +202,15 @@
                 <div class="modal-dialog modal-xl">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="productViewModalLabel">Details</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <h5 class="modal-title" id="productViewModalLabel">Détails</h5>
+                            <button type="button" class="btn-close" data-dismiss="modal" aria-label="Fermer"></button>
+                            {{-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"><i class="fa fa-cross    "></i></button> --}}
                         </div>
                         <div class="modal-body">
                             <product-details></product-details>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
                             {{-- <button type="button" class="btn btn-primary">Save changes</button> --}}
                         </div>
                     </div>
