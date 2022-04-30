@@ -9,7 +9,11 @@
                 <div class="col-lg-6">
                     <div class="card">
                         <div class="card-body">
-                            <div class="card-title">Edit unit</div>
+                            {{--  <div class="card-title">Edit unit</div>  --}}
+                            <div class="card-heder d-flex justify-content-between">
+                                <div class="card-title">Edit Color</div>
+                                <a href="{{ route('unit.index') }}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Back</a>
+                            </div>
                             <hr />
                             <form method="POST" class="update_form" action="{{ route('unit.update',$unit->id) }}" enctype="multipart/form-data">
                                 @csrf

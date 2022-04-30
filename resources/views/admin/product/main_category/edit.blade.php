@@ -9,7 +9,11 @@
                 <div class="col-lg-6">
                     <div class="card">
                         <div class="card-body">
-                            <div class="card-title">Edit Main Category</div>
+                            {{--  <div class="card-title">Edit Main Category</div>  --}}
+                            <div class="card-heder d-flex justify-content-between">
+                                <div class="card-title">Edit Main Category</div>
+                                <a href="{{ route('main_category.index') }}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Back</a>
+                            </div>
                             <hr />
                             <form method="POST" class="update_form" action="{{ route('main_category.update',$main_category->id) }}" enctype="multipart/form-data">
                                 @csrf

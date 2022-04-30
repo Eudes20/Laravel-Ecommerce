@@ -9,7 +9,11 @@
                 <div class="col-lg-10">
                     <div class="card">
                         <div class="card-body">
-                            <div class="card-title">Create Sub Category</div>
+                            {{--  <div class="card-title">Create Sub Category</div>  --}}
+                            <div class="card-heder d-flex justify-content-between">
+                                <div class="card-title">Create Sub Category</div>
+                                <a href="{{ route('sub_category.index') }}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Back</a>
+                            </div>
                             <hr />
                             <form method="POST" class="insert_form" action="{{ route('sub_category.store') }}" enctype="multipart/form-data">
                                 @csrf

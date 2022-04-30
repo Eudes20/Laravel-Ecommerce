@@ -9,7 +9,11 @@
                 <div class="col-lg-10">
                     <div class="card">
                         <div class="card-body">
-                            <div class="card-title">Edit Vendor</div>
+                            {{--  <div class="card-title">Edit Vendor</div>  --}}
+                            <div class="card-heder d-flex justify-content-between">
+                                <div class="card-title">Edit Vendor</div>
+                                <a href="{{ route('vendor.index') }}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Back</a>
+                            </div>
                             <hr />
                             <form method="POST" class="update_form" action="{{ route('vendor.update',$vendor->id) }}" enctype="multipart/form-data">
                                 @csrf

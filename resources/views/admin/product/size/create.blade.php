@@ -9,7 +9,11 @@
                 <div class="col-lg-6">
                     <div class="card">
                         <div class="card-body">
-                            <div class="card-title">Create size</div>
+                            {{--  <div class="card-title">Create size</div>  --}}
+                            <div class="card-heder d-flex justify-content-between">
+                                <div class="card-title">Create size</div>
+                                <a href="{{ route('size.index') }}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Back</a>
+                            </div>
                             <hr />
                             <form method="POST" class="insert_form" action="{{ route('size.store') }}" enctype="multipart/form-data">
                                 @csrf

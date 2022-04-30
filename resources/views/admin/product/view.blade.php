@@ -8,7 +8,16 @@
     </style>
     <div class="content-wrapper">
         <div class="container-fluid">
-            @include('admin.includes.bread_cumb',['title'=>'Product Details'])
+            <div class="d-flex justify-content-between">
+                <div class="card-title">
+                    @include('admin.includes.bread_cumb',['title'=>'ProductDetails'])
+                </div>
+                <div>
+                    <a href="{{ route('product.index') }}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Back</a>
+                </div>
+            </div>
+            
+            <br/>
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card">
