@@ -67,7 +67,7 @@
                                 <div class="form-group row">
                                     <label for="input-23" class="col-sm-2 col-form-label">Mobile Number</label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="phone" class="form-control" id="input-23" placeholder="phone" />
+                                        <input type="number" name="phone" class="form-control" id="input-23" placeholder="phone" />
                                         @error('phone')
                                             <div class="text-warning">{{ $message }}</div>
                                         @enderror
@@ -85,7 +85,7 @@
                                 <div class="form-group row">
                                     <label for="input-25" class="col-sm-2 col-form-label">Confirm Password</label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="password_confirmation" class="form-control" id="input-25" placeholder="Confirm Password" />
+                                        <input type="password" name="password_confirmation" class="form-control" id="input-25" placeholder="Confirm Password" />
                                         @error('password_confirmation')
                                             <div class="text-warning">{{ $message }}</div>
                                         @enderror
