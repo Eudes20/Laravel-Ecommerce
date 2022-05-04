@@ -61,7 +61,7 @@
 
         <!-- header start -->
         {{-- @include('include.flash') --}}
-        <div class="main-wrapper box-shadow">
+        <div class="container-fluid box-shadow">
             <header class="clearfix">
                 {{-- first header start --}}
                 <div class="header-top-area bb hidden-xs">

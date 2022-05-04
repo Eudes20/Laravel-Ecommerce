@@ -4,7 +4,7 @@
     @include('website.ecommerce.home_include.slider')
 
     <div class="all-product-area mtb-45" id="productList">
-        <div class="container">
+        <div class="container overflow-auto">
             <div class="row">
                 <div class="col-xl-3 col-lg-3 col-md-12 col-12">
 
@@ -25,7 +25,7 @@
                 </div>
 
                 <!-- product-area start -->
-                <div class="col-xl-9 col-lg-9 col-md-12 col-12">
+                <div class="col-xl-9 col-lg-9 col-md-12 col-12 order-first order-lg-last">
 
                     <!-- tab-area start -->
                     <div class="tab-area box-shadow bg-fff">
