@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use Illuminate\Validation\Rule;
 
 class CategoryController extends Controller
 {
@@ -21,14 +22,14 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $collection = Category::where('status',1)->latest()->paginate(10);
+        $collection = Category::latest()->paginate(10);
         return view('admin.product.category.index',compact('collection'));
     }
 
     public function get_category_json()
     {
 
-        $collection = Category::where('status',1)->latest()->get();
+        $collection = Category::latest()->get();
         $options = '';
         foreach ($collection as $key => $value) {
             $options .= "<option ".($key==0?' selected':'')." value='".$value->id."'>".$value->name."</option>";
@@ -43,7 +44,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        $maincategory = MainCategory::where('status',1)->latest()->get();
+        $maincategory = MainCategory::latest()->get();
         return view('admin.product.category.create',compact('maincategory'));
     }
 
@@ -56,9 +57,14 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'name' => ['required'],
-            'main_category_id' => ['required'],
-            'icon' => ['required'],
+            'main_category_id' => ['required', 'exists:main_categories,id'],
+            'name' => [
+                'required',
+                Rule::unique('categories')->where(function ($query) use ($request) {
+                    return $query->where('main_category_id', $request->main_category_id);
+                })
+            ],
+            'icon' => ['mimes:jpg,jpeg,png'],
         ]);
 
         $category = Category::create($request->except('icon'));
@@ -97,7 +103,7 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        $main_category  = MainCategory::where('status',1)->latest()->get();
+        $main_category  = MainCategory::latest()->get();
         return view('admin.product.category.edit',compact('category','main_category'));
     }
 
@@ -111,8 +117,14 @@ class CategoryController extends Controller
     public function update(Request $request, Category $category)
     {
         $this->validate($request,[
-            'name' => ['required'],
-            'main_category_id' => ['required'],
+            'main_category_id' => ['required', 'exists:main_categories,id'],
+            'name' => [
+                'required',
+                Rule::unique('categories')->ignore($category->id)->where(function ($query) use ($request) {
+                    return $query->where('main_category_id', $request->main_category_id);
+                })
+            ],
+            'icon' => 'mimes:jpg,jpeg,png'
         ]);
 
         $category->update($request->except('icon'));

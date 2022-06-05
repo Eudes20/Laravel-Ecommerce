@@ -62,12 +62,12 @@
             <li>
                 <a href="{{ route('unit.index') }}"><i class="zmdi zmdi-dot-circle-alt"></i> Unit</a>
             </li>
-            <li>
+            {{-- <li>
                 <a href="{{ route('writer.index') }}"><i class="zmdi zmdi-dot-circle-alt"></i> Writer</a>
-            </li>
-            <li>
+            </li> --}}
+            {{-- <li>
                 <a href="{{ route('publication.index') }}"><i class="zmdi zmdi-dot-circle-alt"></i> Publication</a>
-            </li>
+            </li> --}}
             <li>
                 <a href="{{ route('status.index') }}"><i class="zmdi zmdi-dot-circle-alt"></i> Status</a>
             </li>

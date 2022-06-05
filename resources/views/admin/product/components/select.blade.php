@@ -38,7 +38,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <forms action="{{ $action }}" data-target_select="#select{{ $name }}" class="component_form" method="POST" enctype="multipart/form-data">
+            <form action="{{ $action }}" data-target_select="#select{{ $name }}" class="component_form" method="POST" enctype="multipart/form-data">
                 <div class="modal-body">
                         @csrf
                         <div class="preloader component_preloader"></div>
@@ -81,7 +81,7 @@
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <button type="button" class="component_form_submit btn btn-primary">Submit</button>
                 </div>
-            </forms>
+            </form>
         </div>
     </div>
 </div>

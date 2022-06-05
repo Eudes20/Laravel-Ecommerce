@@ -1,10 +1,10 @@
 @extends('website.ecommerce.layouts.ecommerce')
 @section('content')
     <!-- slider area start -->
-    @include('website.ecommerce.home_include.slider')
+    @include('website.ecommerce.home_include.slider', ['latest_products' =>  $latestProducts])
 
     <div class="all-product-area mtb-45" id="productList">
-        <div class="container overflow-auto">
+        <div class="container-fluid overflow-auto">
             <div class="row">
                 <div class="col-xl-3 col-lg-3 col-md-12 col-12">
 

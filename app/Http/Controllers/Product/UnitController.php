@@ -17,7 +17,7 @@ class UnitController extends Controller
      */
     public function index()
     {
-        $collection = Unit::where('status',1)->latest()->paginate(10);
+        $collection = Unit::latest()->paginate(10);
         return view('admin.product.unit.index',compact('collection'));
     }
 
@@ -40,7 +40,7 @@ class UnitController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'name' => ['required'],
+            'name' => ['required', 'unique:units,name'],
         ]);
 
         $unit = Unit::create($request->all());
@@ -87,7 +87,7 @@ class UnitController extends Controller
     public function update(Request $request, Unit $unit)
     {
         $this->validate($request,[
-            'name' => ['required']
+            'name' => ['required', "unique:units,name,{$unit->id}"]
         ]);
 
         $unit->update($request->all());

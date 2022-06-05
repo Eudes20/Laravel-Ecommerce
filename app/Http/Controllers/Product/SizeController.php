@@ -17,7 +17,7 @@ class SizeController extends Controller
      */
     public function index()
     {
-        $collection = Size::where('status',1)->latest()->paginate(10);
+        $collection = Size::latest()->paginate(10);
         return view('admin.product.size.index',compact('collection'));
     }
 
@@ -40,7 +40,7 @@ class SizeController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'name' => ['required']
+            'name' => ['required', 'unique:sizes,name']
         ]);
 
         $size = Size::create($request->all());
@@ -85,7 +85,7 @@ class SizeController extends Controller
     public function update(Request $request, Size $size)
     {
         $this->validate($request,[
-            'name' => ['required']
+            'name' => ['required', "unique:sizes,name,{$size->id}"]
         ]);
 
         $size->update($request->all());

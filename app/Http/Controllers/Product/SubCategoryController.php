@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use Illuminate\Validation\Rule;
 
 class SubCategoryController extends Controller
 {
@@ -20,7 +21,7 @@ class SubCategoryController extends Controller
      */
     public function index()
     {
-        $collection = SubCategory::where('status',1)->latest()->paginate(10);
+        $collection = SubCategory::latest()->paginate(10);
         return view('admin.product.sub_category.index',compact('collection'));
     }
 
@@ -31,8 +32,8 @@ class SubCategoryController extends Controller
      */
     public function create()
     {
-        $maincategory = MainCategory::where('status',1)->latest()->get();
-        $category = Category::where('status',1)->where('main_category_id',MainCategory::where('status',1)->latest()->first()->id)->latest()->get();
+        $maincategory = MainCategory::latest()->get();
+        $category = Category::where('main_category_id',MainCategory::latest()->first()->id)->latest()->get();
         return view('admin.product.sub_category.create',compact('maincategory','category'));
     }
 
@@ -44,12 +45,23 @@ class SubCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
-            'name' => ['required'],
-            'main_category_id' => ['required'],
-            'category_id' => ['required'],
-            'icon' => ['required'],
-        ]);
+        $rules = [
+            'name' => [
+                'required',
+                Rule::unique('sub_categories')->where(function($query) use ($request) {
+                    $query->where('main_category_id', $request->main_category_id)->where('category_id', $request->category_id);
+                })
+            ],
+            'main_category_id' => ['required', 'exists:main_categories,id'],
+            'category_id' => [
+                'required',
+                'exists:categories,id',
+                Rule::in(MainCategory::find($request->main_category_id)->related_categories->pluck('id')->toArray())
+            ],
+            'icon' => ['mimes:jpg,jpeg,png'],
+        ];
+
+        $this->validate($request, $rules);
 
         $sub_category = SubCategory::create($request->except('icon'));
 
@@ -87,8 +99,8 @@ class SubCategoryController extends Controller
      */
     public function edit(SubCategory $sub_category)
     {
-        $main_category = MainCategory::where('status',1)->where('id',$sub_category->main_category_id)->latest()->get();
-        $category = Category::where('status',1)->where('main_category_id',$sub_category->main_category_id)->latest()->get();
+        $main_category = MainCategory::where('id',$sub_category->main_category_id)->latest()->get();
+        $category = Category::where('main_category_id',$sub_category->main_category_id)->latest()->get();
         return view('admin.product.sub_category.edit',compact('main_category','category','sub_category'));
     }
 
@@ -102,9 +114,21 @@ class SubCategoryController extends Controller
     public function update(Request $request,SubCategory $sub_category)
     {
         $this->validate($request,[
-            'name' => ['required'],
-            'main_category_id' => ['required'],
-            'category_id' => ['required'],
+            'name' => [
+                'required',
+                Rule::unique('sub_categories')->ignore($sub_category->id)->where(function($query) use ($request) {
+                    $query->where('main_category_id', $request->main_category_id)->where('category_id', $request->category_id);
+                })
+            ],
+            'main_category_id' => [
+                'required',
+                'exists:main_categories,id',
+            ],
+            'category_id' => [
+                'required',
+                'exists:categories,id',
+                Rule::in(MainCategory::find($request->main_category_id)->related_categories->pluck('id')->toArray())
+            ],
         ]);
 
         $sub_category->update($request->except('icon'));

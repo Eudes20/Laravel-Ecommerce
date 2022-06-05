@@ -98,7 +98,7 @@
                                     ])
                                 </div>
 
-                                <div class="form-group col-md-6  col-xl-4">
+                                {{-- <div class="form-group col-md-6  col-xl-4">
                                     <label for="" class="col-form-label">Writer</label>
                                     @include('admin.product.components.select',[
                                         'name' => 'writer_id',
@@ -128,7 +128,7 @@
                                             ['name' => 'description','type' => 'textarea'],
                                         ]
                                     ])
-                                </div>
+                                </div> --}}
 
                                 <div class="form-group col-md-6  col-xl-4">
                                     <label for="" class="col-form-label">Color</label>

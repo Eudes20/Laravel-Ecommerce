@@ -18,7 +18,7 @@ class VendorController extends Controller
      */
     public function index()
     {
-        $collection = Vendor::where('status',1)->latest()->paginate(10);
+        $collection = Vendor::latest()->paginate(10);
         return view('admin.product.vendor.index',compact('collection'));
     }
 
@@ -41,12 +41,12 @@ class VendorController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'name' => ['required'],
-            'email' => ['required'],
-            'address' => ['required'],
-            'mobile_no' => ['required'],
-            'description' => ['required'],
-            'image' => ['required'],
+            'name' => ['required', 'unique:vendors,name'],
+            'email' => ['email', 'unique:vendors,email'],
+            'address' => ['required', 'string'],
+            'mobile_no' => ['required', 'string'],
+            'description' => ['string'],
+            'image' => ['mimes:jpg,jpeg,png'],
         ]);
 
         $vendor = Vendor::create($request->except('image'));
@@ -99,17 +99,18 @@ class VendorController extends Controller
     public function update(Request $request, Vendor $vendor)
     {
         $this->validate($request,[
-            'name' => ['required'],
-            'email' => ['required'],
-            'address' => ['required'],
-            'mobile_no' => ['required'],
-            'description' => ['required'],
+            'name' => ['required', "unique:vendors,name', {$vendor->id}"],
+            'email' => ['email', "unique:vendors,email', {$vendor->id}"],
+            'address' => ['required', 'string'],
+            'mobile_no' => ['required', 'string'],
+            'description' => ['string'],
+            'image' => ['mimes:jpg,jpeg,png'],
         ]);
 
         $vendor->update($request->except('image'));
 
         if($request->hasFile('image')){
-            $vendor->logo = Storage::put('uploads/vendor',$request->file('image'));
+            $vendor->image = Storage::put('uploads/vendor',$request->file('image'));
             $vendor->save();
         }
 

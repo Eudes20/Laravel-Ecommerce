@@ -25,5 +25,8 @@
       "username": "developer",
       "password": "dev"
     }
+  ],
+  "i18n-ally.localesPaths": [
+    "resources/lang"
   ]
 }

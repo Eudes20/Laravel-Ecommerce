@@ -33,7 +33,7 @@
                                             <tr>
                                                 <td scope="row">{{ $key+1 }}</td>
                                                 <td scope="row">{{ $item->name }}</td>
-                                                <td scope="row">{{ $item->description }}</td>
+                                                <td scope="row">{!! $item->description !!}</td>
                                                 <td scope="row">{{ $item->mobile_no }}</td>
                                                 <td scope="row">
                                                     <img src="/{{ $item->image }}" style="height: 40px;" alt="">

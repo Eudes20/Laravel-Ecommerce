@@ -21,9 +21,7 @@ class BrandController extends Controller
      */
     public function index()
     {
-
-
-        $main_categories = MainCategory::where('status',1)->get();
+        $main_categories = MainCategory::all();
         $categories =
 
         $collection = Brand::where('status',1)->latest()->paginate(10);
@@ -55,8 +53,8 @@ class BrandController extends Controller
     {
         // dd($request->all());
         $this->validate($request,[
-            'name' => ['required'],
-            'icon' => ['required']
+            'name' => ['required', "unique:brands,name"],
+            // 'icon' => ['required']
         ]);
 
         $brand = Brand::create($request->except('icon'));
@@ -110,7 +108,7 @@ class BrandController extends Controller
     public function update(Request $request,Brand $brand)
     {
         $this->validate($request,[
-            'name' => ['required']
+            'name' => ['required', "unique:brands,name,{$brand->id}"]
         ]);
 
         $brand->update($request->except('icon'));

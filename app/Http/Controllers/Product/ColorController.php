@@ -17,7 +17,7 @@ class ColorController extends Controller
      */
     public function index()
     {
-        $collection = Color::where('status',1)->latest()->paginate(10);
+        $collection = Color::latest()->paginate(10);
         return view('admin.product.color.index',compact('collection'));
     }
 
@@ -40,7 +40,7 @@ class ColorController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'name' => ['required'],
+            'name' => ['required', 'unique:colors,name'],
         ]);
 
         $color = Color::create($request->all());
@@ -87,7 +87,7 @@ class ColorController extends Controller
     public function update(Request $request, Color $color)
     {
         $this->validate($request,[
-            'name' => ['required']
+            'name' => ['required', "unique:colors,name,{$color->id}"]
         ]);
 
         $color->update($request->all());

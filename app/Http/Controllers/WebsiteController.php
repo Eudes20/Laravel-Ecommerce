@@ -15,7 +15,9 @@ class WebsiteController extends Controller
 {
     public function index()
     {
-        return view('website.ecommerce.index');
+        $latestProducts = Product::latest()->get();
+        
+        return view('website.ecommerce.index', compact('latestProducts'));
     }
 
     public function products()

@@ -2,6 +2,8 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Schema;
 
 class CreateUsersTable extends Migration
@@ -31,6 +33,46 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
+
+        
+        $users = [
+            [
+                'role_id' => 1,
+                'first_name' => 'Judichaël',
+                'last_name' => 'Kessahou',
+                'username' => 'Kess',
+                'photo' => '',
+                'phone' => '',
+                'email' => 'Jkessahou@gmail.com',
+                'address' => '',
+                'email_verified_at' => null,
+                'password' => Hash::make('12345678'),
+                'creator' => '',
+                'slug' => 'super_admin',
+                'status' => 1,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'role_id' => 1,
+                'first_name' => 'Benjamin',
+                'last_name' => 'Ewedje',
+                'username' => 'Ben',
+                'photo' => '',
+                'phone' => '',
+                'email' => 'benewedje.be@gmail.com',
+                'address' => '',
+                'email_verified_at' => null,
+                'password' => Hash::make('12345678'),
+                'creator' => '',
+                'slug' => 'super_admin',
+                'status' => 1,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+        ];
+
+        DB::table('users')->insert($users);
     }
 
     /**

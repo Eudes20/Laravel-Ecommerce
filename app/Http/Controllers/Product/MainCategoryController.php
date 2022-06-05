@@ -19,13 +19,13 @@ class MainCategoryController extends Controller
      */
     public function index()
     {
-        $collection = MainCategory::where('status',1)->latest()->paginate(10);
+        $collection = MainCategory::latest()->paginate(10);
         return view('admin.product.main_category.index',compact('collection'));
     }
 
     public function get_main_category_json()
     {
-        $collection = MainCategory::where('status',1)->latest()->get();
+        $collection = MainCategory::latest()->get();
         $options = '';
         foreach ($collection as $key => $value) {
             $options .= "<option ".($key==0?' selected':'')." value='".$value->id."'>".$value->name."</option>";
@@ -52,8 +52,8 @@ class MainCategoryController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'name' => ['required'],
-            'icon' => ['required'],
+            'name' => ['required', "unique:main_categories,name"],
+            // 'icon' => ['required'],
         ]);
         $main_category = MainCategory::create($request->except('icon'));
 
@@ -105,13 +105,13 @@ class MainCategoryController extends Controller
     public function update(Request $request, MainCategory $main_category)
     {
         $this->validate($request,[
-            'name' => ['required']
+            'name' => ['required', "unique:main_categories,name,{$main_category->id}"]
         ]);
 
         $main_category->update($request->except('icon'));
 
         if($request->hasFile('icon')){
-            $main_category->logo = Storage::put('uploads/maincategory',$request->file('icon'));
+            $main_category->icon = Storage::put('uploads/maincategory',$request->file('icon'));
             $main_category->save();
         }
 

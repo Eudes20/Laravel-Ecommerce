@@ -17,7 +17,7 @@ class StatusController extends Controller
      */
     public function index()
     {
-        $collection = Status::where('status',1)->latest()->paginate(10);
+        $collection = Status::latest()->paginate(10);
         return view('admin.product.status.index',compact('collection'));
     }
 
@@ -40,7 +40,7 @@ class StatusController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'name' => ['required'],
+            'name' => ['required', 'unique:statuses,name'],
         ]);
 
         $status = Status::create($request->all());
@@ -86,7 +86,7 @@ class StatusController extends Controller
     public function update(Request $request, Status $status)
     {
         $this->validate($request,[
-            'name' => ['required']
+            'name' => ['required', "unique:statuses,name, {$status->id}"]
         ]);
 
         $status->update($request->all());

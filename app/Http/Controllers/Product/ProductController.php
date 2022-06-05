@@ -41,25 +41,28 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $brands = Brand::where('status', 1)->get();
-        $colors = Color::where('status', 1)->get();
-        $sizes = Size::where('status', 1)->get();
-        $units = Unit::where('status', 1)->get();
-        $writers = Writer::where('status', 1)->get();
-        $publications = Publication::where('status', 1)->get();
-        $vendors = Vendor::where('status', 1)->get();
-        $status = Status::where('status', 1)->get();
+        $brands = Brand::all();
+        $colors = Color::all();
+        $sizes = Size::all();
+        $units = Unit::all();
+        // $writers = Writer::where('status', 1)->get();
+        // $publications = Publication::where('status', 1)->get();
+        $vendors = Vendor::all();
+        $status = Status::all();
+        $categories = [];
+        $sub_categories = [];
 
-        $maincategories = MainCategory::where('status', 1)->get();
-        $latest_maincategory_id = MainCategory::where('status', 1)->first()->id;
-
-        $categories = Category::where('status', 1)->where('main_category_id', $latest_maincategory_id)->latest()->get();
-        $latest_category_id = Category::where('status', 1)->where('main_category_id', $latest_maincategory_id)->first()->id;
-
-        $sub_categories = SubCategory::where('status', 1)
-            ->where('main_category_id', $latest_maincategory_id)
-            ->where('category_id', $latest_category_id)
-            ->latest()->get();
+        $maincategories = MainCategory::all();
+        if (count($maincategories) > 0) {
+            $latest_maincategory_id = MainCategory::latest()->first()->id;
+    
+            $categories = Category::where('main_category_id', $latest_maincategory_id)->latest()->get();
+            $latest_category_id = Category::where('main_category_id', $latest_maincategory_id)->first()->id;
+    
+            $sub_categories = SubCategory::where('main_category_id', $latest_maincategory_id)
+                ->where('category_id', $latest_category_id)
+                ->latest()->get();
+        }
 
         return view('admin.product.create', compact(
             'brands',
@@ -69,8 +72,6 @@ class ProductController extends Controller
             'maincategories',
             'categories',
             'sub_categories',
-            'writers',
-            'publications',
             'vendors',
             'status'
         ));
@@ -194,11 +195,11 @@ class ProductController extends Controller
     {
         // dd($product->minimum_amount);
         $brands = Brand::where('status', 1)->get();
-        $colors = Color::where('status', 1)->get();
+        $colors = Color::all();
         $sizes = Size::where('status', 1)->get();
         $units = Unit::where('status', 1)->get();
-        $writers = Writer::where('status', 1)->get();
-        $publications = Publication::where('status', 1)->get();
+        // $writers = Writer::where('status', 1)->get();
+        // $publications = Publication::where('status', 1)->get();
         $vendors = Vendor::where('status', 1)->get();
         $status = Status::where('status', 1)->get();
 
@@ -222,8 +223,6 @@ class ProductController extends Controller
             'maincategories',
             'categories',
             'sub_categories',
-            'writers',
-            'publications',
             'vendors',
             'status'
         ));
