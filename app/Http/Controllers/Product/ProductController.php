@@ -122,7 +122,7 @@ class ProductController extends Controller
         $product->description = $request->description;
         $product->features = $request->features;
         $product->thumb_image = $request->thumb_image;
-        $product->status = $request->status;
+        $product->status = 1;
         $product->creator = Auth::user()->id;
         $product->save();
 
@@ -288,13 +288,13 @@ class ProductController extends Controller
             $product->sub_category()->sync($request->product_sub_category_id);
         }
 
-        if ($request->has('writer_id')) {
-            $product->writer()->sync($request->writer_id);
-        }
+        // if ($request->has('writer_id')) {
+        //     $product->writer()->sync($request->writer_id);
+        // }
 
-        if ($request->has('publication_id')) {
-            $product->publication()->sync($request->publication_id);
-        }
+        // if ($request->has('publication_id')) {
+        //     $product->publication()->sync($request->publication_id);
+        // }
 
         if ($request->has('color_id')) {
             $product->color()->sync($request->color_id);
@@ -316,7 +316,7 @@ class ProductController extends Controller
             $product->vendor()->sync($request->vendor_id);
         }
 
-        return Product::where('id',$product->id)->with(['category', 'sub_category', 'main_category', 'color', 'image', 'publication', 'size', 'unit', 'vendor', 'writer'])
+        return Product::where('id',$product->id)->with(['category', 'sub_category', 'main_category', 'color', 'image', 'size', 'unit', 'vendor'])
                         ->latest()->first();
 
     }

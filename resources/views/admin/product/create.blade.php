@@ -11,293 +11,238 @@
                         <div class="card-body">
                             <div class="card-title">Add Product</div>
                             <hr />
-                            <form class="insert_form product_insert_form row" method="POST" action="{{route('product.store')}}" enctype="multipart/form-data">
+                            <form class="insert_form product_insert_form" method="POST" action="{{route('product.store')}}" enctype="multipart/form-data">
                                 @csrf
                                 <div class="preloader"></div>
-                                <div class="form-group col-md-6 col-xl-4">
-                                    <label for="" class=" col-form-label">Name</label>
-                                    @include('admin.product.components.input',[
-                                        'name' => 'product_name',
-                                        'type' => 'text'
-                                    ])
-                                </div>
-
-                                <div class="form-group col-md-6  col-xl-4">
-                                    <label for="" class="col-form-label">Brand</label>
-                                    @include('admin.product.components.select',[
-                                        'name' => 'brand',
-                                        'attributes' => '',
-                                        'class' => 'multiple-select',
-                                        'collection' => $brands,
-                                        'action' => route('brand.store'),
-                                        'fields' => [
-                                            ['name' => 'name','type' => 'text'],
-                                            ['name' => 'icon','type' => 'file'],
-                                        ]
-                                    ])
-                                </div>
-
-                                <div class="form-group col-md-6  col-xl-4">
-                                    <label for="" class="col-form-label">Main Category</label>
-                                    @include('admin.product.components.select',[
-                                        'name' => 'product_main_category_id',
-                                        'attributes' => '',
-                                        'class' => 'multiple-select product_main_category',
-                                        'collection' => $maincategories,
-                                        'action' => route('main_category.store'),
-                                        'fields' => [
-                                            ['name' => 'name','type' => 'text'],
-                                            ['name' => 'icon','type' => 'file'],
-                                        ]
-                                    ])
-                                </div>
-
-                                <div class="form-group col-md-6  col-xl-4">
-                                    <label for="" class="col-form-label">Category</label>
-                                    @include('admin.product.components.select',[
-                                        'name' => 'product_category_id',
-                                        'attributes' => 'multiple',
-                                        'class' => 'multiple-select product_category',
-                                        'collection' => $categories,
-                                        'action' => route('category.store'),
-                                        'fields' => [
-                                            ['name' => 'main_category_id','type' => 'select','option_route'=>route('get_main_category_json')],
-                                            ['name' => 'name','type' => 'text'],
-                                            ['name' => 'icon','type' => 'file'],
-                                        ]
-                                    ])
-                                </div>
-
-                                <div class="form-group col-md-6  col-xl-4">
-                                    <label for="" class="col-form-label">Sub Category</label>
-                                    @include('admin.product.components.select',[
-                                        'name' => 'product_sub_category_id',
-                                        'attributes' => 'multiple',
-                                        'class' => 'multiple-select product_sub_category',
-                                        'collection' => $sub_categories,
-                                        'action' => route('sub_category.store'),
-                                        'fields' => [
-                                            [
-                                                'name' => 'main_category_id',
-                                                'type' => 'select',
-                                                'option_route'=>route('get_main_category_json'),
-                                                'class' => 'component_modal_main_category parent_select',
-                                                'this_field_will_contorl' => 'component_modal_category',
-                                                'this_field_control_route' => route('get_all_cateogory_selected_by_main_category',''),
-                                                // 'this_field_control_route' => '',
-                                            ],
-                                            [
-                                                'name' => 'category_id',
-                                                'class' => 'component_modal_category',
-                                                'type' => 'select',
-                                                'option_route'=>''
-                                            ],
-                                            ['name' => 'name','type' => 'text'],
-                                            ['name' => 'icon','type' => 'file'],
-                                        ]
-                                    ])
-                                </div>
-
-                                {{-- <div class="form-group col-md-6  col-xl-4">
-                                    <label for="" class="col-form-label">Writer</label>
-                                    @include('admin.product.components.select',[
-                                        'name' => 'writer_id',
-                                        'attributes' => 'multiple',
-                                        'class' => 'multiple-select',
-                                        'collection' => $writers,
-                                        'action' => route('writer.store'),
-                                        'fields' => [
-                                            ['name' => 'name','type' => 'text'],
-                                            ['name' => 'description','type' => 'textarea'],
-                                            ['name' => 'image','type' => 'file'],
-                                        ]
-                                    ])
-                                </div>
-
-                                <div class="form-group col-md-6  col-xl-4">
-                                    <label for="" class="col-form-label">Publication</label>
-                                    @include('admin.product.components.select',[
-                                        'name' => 'publication_id',
-                                        'attributes' => 'multiple',
-                                        'class' => 'multiple-select',
-                                        'collection' => $publications,
-                                        'action' => route('publication.store'),
-                                        'fields' => [
-                                            ['name' => 'name','type' => 'text'],
-                                            ['name' => 'image','type' => 'file'],
-                                            ['name' => 'description','type' => 'textarea'],
-                                        ]
-                                    ])
-                                </div> --}}
-
-                                <div class="form-group col-md-6  col-xl-4">
-                                    <label for="" class="col-form-label">Color</label>
-                                    @include('admin.product.components.select',[
-                                        'name' => 'color_id',
-                                        'attributes' => 'multiple',
-                                        'class' => 'multiple-select',
-                                        'collection' => $colors,
-                                        'action' => route('color.store'),
-                                        'fields' => [
-                                            ['name' => 'name', 'type' => 'text'],
-                                        ]
-                                    ])
-                                </div>
-
-                                <div class="form-group col-md-6  col-xl-4">
-                                    <label for="" class="col-form-label">Size</label>
-                                    @include('admin.product.components.select',[
-                                        'name' => 'size_id',
-                                        'attributes' => 'multiple',
-                                        'class' => 'multiple-select',
-                                        'collection' => $sizes,
-                                        'action' => route('size.store'),
-                                        'fields' => [
-                                            ['name' => 'name', 'type' => 'text'],
-                                        ]
-                                    ])
-                                </div>
-
-                                <div class="form-group col-md-6  col-xl-4">
-                                    <label for="" class="col-form-label">Unit</label>
-                                    @include('admin.product.components.select',[
-                                        'name' => 'unit_id',
-                                        'attributes' => 'multiple',
-                                        'class' => 'multiple-select',
-                                        'collection' => $units,
-                                        'action' => route('unit.store'),
-                                        'fields' => [
-                                            ['name' => 'name', 'type' => 'text'],
-                                        ]
-                                    ])
-                                </div>
-
-                                <div class="form-group col-md-6  col-xl-4">
-                                    <label for="" class="col-form-label">Vendor</label>
-                                    @include('admin.product.components.select',[
-                                        'name' => 'vendor_id',
-                                        'attributes' => 'multiple',
-                                        'class' => 'multiple-select',
-                                        'collection' => $vendors,
-                                        'action' => route('vendor.store'),
-                                        'fields' => [
-                                            ['name' => 'name', 'type' => 'text'],
-                                            ['name' => 'email', 'type' => 'email'],
-                                            ['name' => 'mobile_no', 'type' => 'text'],
-                                            ['name' => 'image', 'type' => 'file'],
-                                            ['name' => 'address', 'type' => 'textarea'],
-                                            ['name' => 'description', 'type' => 'textarea'],
-                                        ]
-                                    ])
-                                </div>
-
-                                <div class="form-group col-md-6 col-xl-4">
-                                    <label for="" class=" col-form-label">Price</label>
-                                    @include('admin.product.components.input',[
-                                        'name' => 'price',
-                                        'type' => 'number',
-                                        'attr' => "step='0.01'"
-                                    ])
-                                </div>
-
-                                <div class="form-group col-md-6 col-xl-4">
-                                    <label for="" class=" col-form-label">Tax</label>
-                                    @include('admin.product.components.input',[
-                                        'name' => 'tax',
-                                        'type' => 'number'
-                                    ])
-                                </div>
-
-                                <div class="form-group col-md-6 col-xl-4">
-                                    <label for="" class=" col-form-label">Discount</label>
-                                    @include('admin.product.components.input',[
-                                        'name' => 'discount',
-                                        'type' => 'text'
-                                    ])
-                                </div>
-
-                                <div class="form-group col-md-6 col-xl-4">
-                                    <label for="" class=" col-form-label">Expiration Date</label>
-                                    @include('admin.product.components.input',[
-                                        'name' => 'expiration_date',
-                                        'type' => 'date'
-                                    ])
-                                </div>
-
-                                <div class="form-group col-md-6 col-xl-4">
-                                    <label for="" class=" col-form-label">Stock</label>
-                                    @include('admin.product.components.input',[
-                                        'name' => 'stock',
-                                        'type' => 'number'
-                                    ])
-                                </div>
-
-                                <div class="form-group col-md-6 col-xl-4">
-                                    <label for="" class=" col-form-label">Alert Quantity</label>
-                                    @include('admin.product.components.input',[
-                                        'name' => 'alert_quantity',
-                                        'type' => 'number'
-                                    ])
-                                </div>
-
-                                <div class="col-12"></div>
-
-                                <div class="form-group col-md-6 col-xl-6">
-                                    <label for="" class=" col-form-label">Description</label>
-                                    <div class="">
-                                        {{-- <input type="number" class="form-control"  placeholder="Alert" /> --}}
-                                        <textarea name="description" class="form-control" id="mytextarea1" cols="30" rows="10"></textarea>
-                                        <span class="text-danger description"></span>
+                                <div class="row">
+                                    <div class="form-group col-md-6 col-xl-4">
+                                        <label for="" class=" col-form-label">Name</label>
+                                        @include('admin.product.components.input',[
+                                            'name' => 'product_name',
+                                            'type' => 'text'
+                                        ])
                                     </div>
-                                </div>
-
-                                <div class="form-group col-md-6 col-xl-6">
-                                    <label for="" class=" col-form-label">Features</label>
-                                    <div class="">
-                                        {{-- <input type="number" class="form-control"  placeholder="Alert" /> --}}
-                                        <textarea name="features" class="form-control" id="mytextarea2" cols="30" rows="10"></textarea>
-                                        <span class="text-danger features"></span>
+                                    
+                                    <div class="form-group col-md-6  col-xl-4">
+                                        <label for="" class="col-form-label">Brand</label>
+                                        @include('admin.product.components.select',[
+                                            'name' => 'brand',
+                                            'attributes' => '',
+                                            'class' => 'multiple-select',
+                                            'collection' => $brands,
+                                        ])
                                     </div>
-                                </div>
-
-                                <div class="form-group col-md-6 col-xl-6">
-                                    <label for="" class=" col-form-label">Thumb Image</label>
-                                    @include('admin.product.components.input',[
-                                        'name' => 'thumb_image',
-                                        'type' => 'file',
-                                        'attr' => ''
-                                    ])
-                                </div>
-
-                                <div class="form-group col-md-6 col-xl-6">
-                                    <label for="" class=" col-form-label">Related Image</label>
-                                    @include('admin.product.components.input',[
-                                        'name' => 'related_images',
-                                        'type' => 'file',
-                                        'attr' => 'multiple'
-                                    ])
-                                </div>
-
-
-                                <div class="form-group col-md-6  col-xl-4">
-                                    <label for="" class="col-form-label">Staus</label>
-                                    <div class="">
-                                        <select name="status"  class="form-control">
-                                            @foreach ($status as $item)
-                                                <option value="{{ $item->serial }}">{{ $item->name }}</option>
-                                            @endforeach
-                                        </select>
-                                        <span class="text-danger status"></span>
+                                    
+                                    <div class="form-group col-md-6  col-xl-4">
+                                        <label for="" class="col-form-label">Main Category</label>
+                                        @include('admin.product.components.select',[
+                                            'name' => 'product_main_category_id',
+                                            'attributes' => '',
+                                            'class' => 'multiple-select product_main_category',
+                                            'collection' => $maincategories,
+                                        ])
                                     </div>
-                                </div>
-                                <div class="form-group col-md-6  col-xl-4">
-                                    <label for="" class="col-form-label">Free Delivery</label>
-                                    <div class="">
-                                        <select name="free_delivery"  class="form-control">
-                                            <option value="false">Off</option>
-                                            <option value="true">On</option>
-                                        </select>
-                                        <span class="text-danger status"></span>
+                                    
+                                    <div class="form-group col-md-6  col-xl-4">
+                                        <label for="" class="col-form-label">Category</label>
+                                        @include('admin.product.components.select',[
+                                            'name' => 'product_category_id',
+                                            'attributes' => 'multiple',
+                                            'class' => 'multiple-select product_category',
+                                            'collection' => $categories,
+                                        ])
+                                    </div>
+                                    
+                                    <div class="form-group col-md-6  col-xl-4">
+                                        <label for="" class="col-form-label">Sub Category</label>
+                                        @include('admin.product.components.select',[
+                                            'name' => 'product_sub_category_id',
+                                            'attributes' => 'multiple',
+                                            'class' => 'multiple-select product_sub_category',
+                                            'collection' => $sub_categories,
+                                        ])
+                                    </div>
+                                    
+                                    {{-- <div class="form-group col-md-6  col-xl-4">
+                                        <label for="" class="col-form-label">Writer</label>
+                                        @include('admin.product.components.select',[
+                                            'name' => 'writer_id',
+                                            'attributes' => 'multiple',
+                                            'class' => 'multiple-select',
+                                            'collection' => $writers,
+                                            'action' => route('writer.store'),
+                                            'fields' => [
+                                                ['name' => 'name','type' => 'text'],
+                                                ['name' => 'description','type' => 'textarea'],
+                                                ['name' => 'image','type' => 'file'],
+                                            ]
+                                        ])
+                                    </div> --}}
+                                    
+                                    {{-- <div class="form-group col-md-6  col-xl-4">
+                                        <label for="" class="col-form-label">Publication</label>
+                                        @include('admin.product.components.select',[
+                                            'name' => 'publication_id',
+                                            'attributes' => 'multiple',
+                                            'class' => 'multiple-select',
+                                            'collection' => $publications,
+                                            'action' => route('publication.store'),
+                                            'fields' => [
+                                                ['name' => 'name','type' => 'text'],
+                                                ['name' => 'image','type' => 'file'],
+                                                ['name' => 'description','type' => 'textarea'],
+                                            ]
+                                        ])
+                                    </div> --}}
+                                    
+                                    <div class="form-group col-md-6  col-xl-4">
+                                        <label for="" class="col-form-label">Color</label>
+                                        @include('admin.product.components.select',[
+                                            'name' => 'color_id',
+                                            'attributes' => 'multiple',
+                                            'class' => 'multiple-select',
+                                            'collection' => $colors,
+                                        ])
+                                    </div>
+                                    
+                                    <div class="form-group col-md-6  col-xl-4">
+                                        <label for="" class="col-form-label">Size</label>
+                                        @include('admin.product.components.select',[
+                                            'name' => 'size_id',
+                                            'attributes' => 'multiple',
+                                            'class' => 'multiple-select',
+                                            'collection' => $sizes,
+                                        ])
+                                    </div>
+                                    
+                                    <div class="form-group col-md-6  col-xl-4">
+                                        <label for="" class="col-form-label">Unit</label>
+                                        @include('admin.product.components.select',[
+                                            'name' => 'unit_id',
+                                            'attributes' => 'multiple',
+                                            'class' => 'multiple-select',
+                                            'collection' => $units,
+                                        ])
+                                    </div>
+                                    
+                                    <div class="form-group col-md-6  col-xl-4">
+                                        <label for="" class="col-form-label">Vendor</label>
+                                        @include('admin.product.components.select',[
+                                            'name' => 'vendor_id',
+                                            'attributes' => 'multiple',
+                                            'class' => 'multiple-select',
+                                            'collection' => $vendors,
+                                        ])
+                                    </div>
+                                    
+                                    <div class="form-group col-md-6 col-xl-4">
+                                        <label for="" class=" col-form-label">Price</label>
+                                        @include('admin.product.components.input',[
+                                            'name' => 'price',
+                                            'type' => 'number',
+                                            'attr' => "step='0.01'"
+                                        ])
+                                    </div>
+                                    
+                                    <div class="form-group col-md-6 col-xl-4">
+                                        <label for="" class=" col-form-label">Tax</label>
+                                        @include('admin.product.components.input',[
+                                            'name' => 'tax',
+                                            'type' => 'number'
+                                        ])
+                                    </div>
+                                    
+                                    <div class="form-group col-md-6 col-xl-4">
+                                        <label for="" class=" col-form-label">Discount</label>
+                                        @include('admin.product.components.input',[
+                                            'name' => 'discount',
+                                            'type' => 'text'
+                                        ])
+                                    </div>
+                                    
+                                    <div class="form-group col-md-6 col-xl-4">
+                                        <label for="" class=" col-form-label">Expiration Date</label>
+                                        @include('admin.product.components.input',[
+                                            'name' => 'expiration_date',
+                                            'type' => 'date'
+                                        ])
+                                    </div>
+                                    
+                                    <div class="form-group col-md-6 col-xl-4">
+                                        <label for="" class=" col-form-label">Stock</label>
+                                        @include('admin.product.components.input',[
+                                            'name' => 'stock',
+                                            'type' => 'number'
+                                        ])
+                                    </div>
+                                    
+                                    <div class="form-group col-md-6 col-xl-4">
+                                        <label for="" class=" col-form-label">Alert Quantity</label>
+                                        @include('admin.product.components.input',[
+                                            'name' => 'alert_quantity',
+                                            'type' => 'number'
+                                        ])
+                                    </div>
+                                    
+                                    <div class="col-12"></div>
+                                    
+                                    <div class="form-group col-md-6 col-xl-6">
+                                        <label for="" class=" col-form-label">Description</label>
+                                        <div class="">
+                                            {{-- <input type="number" class="form-control"  placeholder="Alert" /> --}}
+                                            <textarea name="description" class="form-control" id="mytextarea1" cols="30" rows="10"></textarea>
+                                            <span class="text-danger description"></span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group col-md-6 col-xl-6">
+                                        <label for="" class=" col-form-label">Features</label>
+                                        <div class="">
+                                            {{-- <input type="number" class="form-control"  placeholder="Alert" /> --}}
+                                            <textarea name="features" class="form-control" id="mytextarea2" cols="30" rows="10"></textarea>
+                                            <span class="text-danger features"></span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group col-md-6 col-xl-6">
+                                        <label for="" class=" col-form-label">Thumb Image</label>
+                                        @include('admin.product.components.input',[
+                                            'name' => 'thumb_image',
+                                            'type' => 'file',
+                                            'attr' => ''
+                                        ])
+                                    </div>
+                                    
+                                    <div class="form-group col-md-6 col-xl-6">
+                                        <label for="" class=" col-form-label">Related Image</label>
+                                        @include('admin.product.components.input',[
+                                            'name' => 'related_images',
+                                            'type' => 'file',
+                                            'attr' => 'multiple'
+                                        ])
+                                    </div>
+                                    
+                                    
+                                    <div class="form-group col-md-6  col-xl-4">
+                                        <label for="" class="col-form-label">Staus</label>
+                                        <div class="">
+                                            <select name="status"  class="form-control">
+                                                @foreach ($status as $item)
+                                                    <option value="{{ $item->serial }}">{{ $item->name }}</option>
+                                                @endforeach
+                                            </select>
+                                            <span class="text-danger status"></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-6  col-xl-4">
+                                        <label for="" class="col-form-label">Free Delivery</label>
+                                        <div class="">
+                                            <select name="free_delivery"  class="form-control">
+                                                <option value="false">Off</option>
+                                                <option value="true">On</option>
+                                            </select>
+                                            <span class="text-danger status"></span>
+                                        </div>
                                     </div>
                                 </div>
 
@@ -309,8 +254,8 @@
                                 </div>
                             </form>
                         </div>
+                        @include("admin.includes.form")
                     </div>
-
                 </div>
             </div>
             <!--start overlay-->
